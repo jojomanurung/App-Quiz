@@ -43,7 +43,6 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [ ... questions];
-    console.log(availableQuestions);
     getNewQuestion();
 };
 
@@ -77,6 +76,11 @@ choices.forEach((choice) => {
         acceptingAnswers = false;
         const selectedChoice = e.target;
         const selectedAnswer = selectedChoice.dataset['number'];
+        
+        const classToApply = 
+            selectedAnswer == currentQuestion.answer ? "correct" : "incorrect";
+        
+        selectedChoice.parentElement.classList.add(classToApply);
         getNewQuestion();
     });
 });

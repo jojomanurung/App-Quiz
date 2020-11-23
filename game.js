@@ -38,6 +38,7 @@ fetch('https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=mul
             return formattedQuestion;
         });
         startGame();
+    })    
     .catch((err) => {
         console.error(err);
     });
